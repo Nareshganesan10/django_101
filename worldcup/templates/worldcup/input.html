@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block title %} Inputs{% endblock title %}
+
+{% block css %}
+<link rel="stylesheet" href={% static 'style.css' %}>
+{% endblock css %}
+
+
+{% block content %}
+
+<form action="worldcup/insert" method=POST>
+    {% csrf_token %}
+    <label for="username">Username</label>
+    <input id="username" name="username" type="text"></input>
+    <button type="Submit">Submit</button>
+</form>
+
+{% endblock content %}

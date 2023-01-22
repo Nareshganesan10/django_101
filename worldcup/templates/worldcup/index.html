@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}All countries{% endblock  %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static "worldcup/css/worldcup.css" %}">
+    <link rel="stylesheet" href="{% static 'style.css' %}"
+{% endblock css %}
+
+{% block content %}
+<ul>
+    {% for i in team %}
+    {% comment %} <li><a href="{worldcup_teams.get_absolute_url}">Country name : {{i.country}}</li>     {% endcomment %}
+    {% comment %} <li><a href="/worldcup/find_result/{{i.id}}">{{i.country}} (captain:{{i.captain}})</li>     {% endcomment %}
+    <li><a href="{{ i.get_absolute_url }}">Country name : {{i.country}}</li>
+    {% endfor %}
+</ul>    
+    <hr>
+    <p>maximum_goals in WC : {{max_goals.goals__max}}</p>
+    <p>Total number of teams participated in WC : {{number_of_teams}}</p>
+ </hr>
+<h1>{{user}}</h1>
+{% endblock content %}

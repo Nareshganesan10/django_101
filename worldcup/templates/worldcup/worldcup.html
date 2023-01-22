@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{country}}{% endblock title %}
+
+{% block css %}
+    <link rel="stylesheet" href={% static "style.css" %}
+{% endblock css %}
+
+{% block  content%}
+    {% include "worldcup/include/header.html" %}
+    <li>{{country}}</li>
+    <li>{{captain}}</li>
+    <li>{{goals}}</li>
+    <li>{{stage}}</li>
+    <li>{{is_top_3}}</li>
+{% endblock  %}
+        
